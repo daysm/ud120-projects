@@ -30,6 +30,7 @@ from sklearn.svm import SVC
 clf = SVC(kernel="rbf", C=10000)
 
 # Use smaller training set
+# (uncomment these two lines to use a smaller training set)
 # features_train = features_train[:len(features_train)/100]
 # labels_train = labels_train[:len(labels_train)/100]
 
@@ -52,6 +53,11 @@ print "accuracy score: ", accuracy_score(labels_test, predictions)
 # Accuracy with smaller training set & rbf kernel & C = 1000: 0.821387940842
 # Accuracy with smaller training set & rbf kernel & C = 10000: 0.892491467577
 # Accuracy with full training set & rbf kernel & C = 10000: 0.990898748578
+
+
+# Class of item 10, 26, 50
+print predictions[10], predictions[26], predictions[50] # 1, 0, 1
+
 
 
 #########################################################
