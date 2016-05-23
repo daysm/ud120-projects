@@ -59,8 +59,8 @@ print "accuracy score: ", accuracy_score(labels_test, predictions)
 print predictions[10], predictions[26], predictions[50] # 1, 0, 1
 
 
-# Number of events predicted to belong to the Chris class (using full training set)
-print len([x for x in predictions if x == 1])  # 1018
+# Number of emails predicted to be written by Chris (using full training set)
+print len([x for x in predictions if x == 1])  # 877
 
 #########################################################
 
