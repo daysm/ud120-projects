@@ -24,6 +24,12 @@ features_train, features_test, labels_train, labels_test = preprocess()
 
 #########################################################
 ### your code goes here ###
+
+# Number of features
+print "Number of features: ", len(features_train[0])
+# Percentile 10: 3786 (more complex)
+# Percentile 1: 379
+
 from sklearn.tree import DecisionTreeClassifier
 
 clf = DecisionTreeClassifier(min_samples_split=40)
