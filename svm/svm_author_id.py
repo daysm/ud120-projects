@@ -27,7 +27,7 @@ features_train, features_test, labels_train, labels_test = preprocess()
 
 from sklearn.svm import SVC
 
-clf = SVC(kernel="linear")
+clf = SVC(kernel="rbf", C=10000)
 
 # Use smaller training set
 features_train = features_train[:len(features_train)/100]
@@ -43,8 +43,15 @@ print "predicting time:", round(time()-t0, 3), "s"
 
 from sklearn.metrics import accuracy_score
 
-print "accuracy score: ", accuracy_score(labels_test, predictions) # 0.984072810011
-# Accuracy with smaller training set: 0.884527872582
+print "accuracy score: ", accuracy_score(labels_test, predictions)
+# Accuracy with full training set & linear kernel: 0.984072810011
+# Accuracy with smaller training set & linear kernel: 0.884527872582
+# Accuracy with smaller training set & rbf kernel: 0.616040955631
+# Accuracy with smaller training set & rbf kernel & C = 10: 0.616040955631
+# Accuracy with smaller training set & rbf kernel & C = 100: 0.616040955631
+# Accuracy with smaller training set & rbf kernel & C = 1000: 0.821387940842
+# Accuracy with smaller training set & rbf kernel & C = 10000: 0.892491467577
+
 
 #########################################################
 
